@@ -1,0 +1,12 @@
+[build]
+  command = "pnpm -r build"
+  publish = "web/build"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
