@@ -1,6 +1,10 @@
 [build]
   command = "pnpm -r build"
   publish = "web/build"
+  base = "."
+
+[build.environment]
+  WEB_DEFAULT_API = "/api"
 
 [functions]
   directory = "netlify/functions"
