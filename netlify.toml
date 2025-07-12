@@ -4,10 +4,17 @@
   base = "."
 
 [build.environment]
-  WEB_DEFAULT_API = "/api"
+  WEB_DEFAULT_API = "https://api.cobalt.tools"
+  NODE_VERSION = "20"
+  AWS_LAMBDA_JS_RUNTIME = "nodejs20.x"
 
 [functions]
   directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[functions."api"]
+  node_bundler = "esbuild"
+  external_node_modules = ["serverless-http"]
 
 [[redirects]]
   from = "/api/*"
