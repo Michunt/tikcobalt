@@ -10,6 +10,9 @@
     let turnstileScript: HTMLElement;
 
     onMount(() => {
+        // Disable Turnstile for Netlify deployment
+        return;
+        
         const sitekey = $cachedInfo?.info?.cobalt?.turnstileSitekey;
         if (!sitekey) return;
 

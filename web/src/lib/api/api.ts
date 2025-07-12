@@ -34,6 +34,9 @@ const getAuthorization = async () => {
         return `Api-Key ${processing.customApiKey}`;
     }
 
+    // Always skip Turnstile for Netlify deployment
+    return;
+    
     if (!get(turnstileEnabled)) {
         return;
     }
